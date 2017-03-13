@@ -1,36 +1,29 @@
 # Standard scientific Python imports
-from PIL import Image
-import numpy as np
-import glob
-import naoqi
-from matplotlib import image
-#import cv2
-
-# Import datasets, classifiers and performance metrics
-from sklearn import datasets, svm, metrics
+from naoqi import ALProxy
 #
-tts = naoqi.ALProxy("ALTextToSpeech", "127.0.0.1", 37806)
+tts = ALProxy("ALTextToSpeech", "127.0.0.1", 37806)
 tts.say("Allo le monde ! ", "French")
-
-import httplib, urllib, base64
-headers = {
-    # Request headers
-    'Content-Type': 'application/octet-stream',
-    'Ocp-Apim-Subscription-Key': '281f633d67934f50ae690175f0b271a9',
-}
-
-params = urllib.urlencode({
-})
-
-try:
-    conn = httplib.HTTPSConnection('westus.api.cognitive.microsoft.com')
-    conn.request("POST", "/emotion/v1.0/recognize?%s" % params, open('test/test.jpg', 'rb').read(), headers)
-    response = conn.getresponse()
-    data = response.read()
-    print(data)
-    conn.close()
-except Exception as e:
-    print(" {0}".format(e))
+#
+#
+# import httplib, urllib, base64
+# headers = {
+#     # Request headers
+#     'Content-Type': 'application/octet-stream',
+#     'Ocp-Apim-Subscription-Key': '281f633d67934f50ae690175f0b271a9',
+# }
+#
+# params = urllib.urlencode({
+# })
+#
+# try:
+#     conn = httplib.HTTPSConnection('westus.api.cognitive.microsoft.com')
+#     conn.request("POST", "/emotion/v1.0/recognize?%s" % params, open('test/test.jpg', 'rb').read(), headers)
+#     response = conn.getresponse()
+#     data = response.read()
+#     print(data)
+#     conn.close()
+# except Exception as e:
+#     print(" {0}".format(e))
 
 
 #recognizer = cv2.createLBPHFaceRecognizer()
