@@ -13,11 +13,15 @@ class Person:
     """
     emotions = "unknown";
 
-    def getHumor(self, emotions) :
+    def getHumor(self):
         dominantEmotion = "unknown"
-
+        for x,y in self.emotions:
+            if y >= 0.7 :
+                dominantEmotion = x
 
         return dominantEmotion
+
+
 
     def __init__(self, personParms):
 

@@ -11,3 +11,5 @@ def addPeople(crosoftJson) :
 
     for x in elJson:
         gens.append(Person(x))
+
+    return gens

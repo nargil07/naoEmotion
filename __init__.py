@@ -1,7 +1,7 @@
 # Standard scientific Python imports
 from naoqi import ALProxy
 #
-tts = ALProxy("ALTextToSpeech", "127.0.0.1", 37806)
+tts = ALProxy("ALTextToSpeech", "127.0.0.1", 50630)
 tts.say("Allo le monde ! ", "French")
 #
 #
