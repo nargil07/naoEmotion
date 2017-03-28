@@ -21,8 +21,6 @@ class Person:
 
         return dominantEmotion
 
-
-
     def __init__(self, personParms):
 
         faceRectangle = {}
