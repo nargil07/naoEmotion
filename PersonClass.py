@@ -11,15 +11,21 @@ class Person:
     """
 
     """
-    emotions = "unknown";
 
     def getHumor(self):
         dominantEmotion = "unknown"
+        dominantScore = "0"
         for x,y in self.emotions:
-            if y >= 0.7 :
+            if y >= dominantScore :
                 dominantEmotion = x
+                dominantScore = y
 
-        return dominantEmotion
+        return dominantEmotion, dominantScore
+
+    def getScore(self, emotion):
+        score = self.emotions[emotion]
+
+        return score
 
 
 
