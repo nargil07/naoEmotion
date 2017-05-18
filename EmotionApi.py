@@ -1,23 +1,27 @@
 import httplib, urllib, base64
-
+import cv2
+import jsonInterpreter
 headers = {
     # Request headers. Replace the placeholder key below with your subscription key.
-    'Content-Type': 'application/json',
-    'Ocp-Apim-Subscription-Key': '13hc77781f7e4b19b5fcdd72a8df7156',
+    'Content-Type': 'application/octet-stream',
+    'Ocp-Apim-Subscription-Key': '281f633d67934f50ae690175f0b271a9',
 }
 
 params = urllib.urlencode({
 })
 
-# Replace the example URL below with the URL of the image you want to analyze.
-body = "{ 'url': 'http://example.com/picture.jpg' }"
-
 try:
     conn = httplib.HTTPSConnection('westus.api.cognitive.microsoft.com')
+    f = open('test.bmp', "rb")
+
+    body = f.read()
+
+    f.close()
     conn.request("POST", "/emotion/v1.0/recognize?%s" % params, body, headers)
     response = conn.getresponse()
     data = response.read()
-    print(data)
+
+    print(jsonInterpreter.addPeople(data)[0])
     conn.close()
 except Exception as e:
     print("[Errno {0}] {1}".format(e.errno, e.strerror))
