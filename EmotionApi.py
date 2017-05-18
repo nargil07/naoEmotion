@@ -1,6 +1,6 @@
 import httplib, urllib, base64
-import cv2
 import jsonInterpreter
+import PersonClass
 headers = {
     # Request headers. Replace the placeholder key below with your subscription key.
     'Content-Type': 'application/octet-stream',
@@ -12,7 +12,7 @@ params = urllib.urlencode({
 
 try:
     conn = httplib.HTTPSConnection('westus.api.cognitive.microsoft.com')
-    f = open('test.bmp', "rb")
+    f = open('./test/test.jpg', "rb")
 
     body = f.read()
 
@@ -21,7 +21,11 @@ try:
     response = conn.getresponse()
     data = response.read()
 
-    print(jsonInterpreter.addPeople(data)[0])
+    people = jsonInterpreter.addPeople(data)
+    print people
+    mainPerson = people[0]
+    print(mainPerson.getHumor());
+
     conn.close()
 except Exception as e:
-    print("[Errno {0}] {1}".format(e.errno, e.strerror))
+    print("[Errno {0}]".format(e))

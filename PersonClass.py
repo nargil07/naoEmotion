@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Imports
-import json
-import numpy as np
+
 
 # Class code
 
@@ -38,4 +37,4 @@ class Person:
         faceRectangle = {}
         faceRectangle['left'] = personParms["faceRectangle"]
 
-        emotions = personParms["scores"]
+        self.emotions = personParms["scores"]

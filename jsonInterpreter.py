@@ -2,7 +2,6 @@
 
 # Imports
 import json
-import numpy as np
 from PersonClass import Person
 #
 def addPeople(crosoftJson) :
