@@ -6,6 +6,9 @@ import numpy as np
 from PersonClass import Person
 #
 def addPeople(crosoftJson) :
+    """
+    :return:gens[Person]
+    """
     elJson = json.loads(crosoftJson)
     gens = []
 

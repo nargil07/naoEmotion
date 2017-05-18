@@ -14,7 +14,7 @@ class Person:
     def getHumor(self):
         """
 
-        :return:tuple(emotion dominante, score dominante)
+        :return:tuple(emotion dominante, score dominant)
         """
         dominantEmotion = "unknown"
         dominantScore = "0"
@@ -26,6 +26,10 @@ class Person:
         return dominantEmotion, dominantScore
 
     def getScore(self, emotion):
+        """
+
+        :return:tuple(score dominant)
+        """
         score = self.emotions[emotion]
 
         return score
