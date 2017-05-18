@@ -22,8 +22,15 @@ try:
     data = response.read()
 
     people = jsonInterpreter.addPeople(data)
+    print "people :"
     print people
+    print "\n"
     mainPerson = people[0]
+    print "person"
+    print mainPerson
+    print " --- "
+    print mainPerson.emotions
+    print " --- "
     print(mainPerson.getHumor());
 
     conn.close()

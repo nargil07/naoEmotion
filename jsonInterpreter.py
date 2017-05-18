@@ -2,12 +2,10 @@
 
 # Imports
 import json
+
 from PersonClass import Person
 #
 def addPeople(crosoftJson) :
-    """
-    :return:gens[Person]
-    """
     elJson = json.loads(crosoftJson)
     gens = []
 

@@ -15,8 +15,8 @@ class Person:
         :return:tuple(emotion dominante, score dominante)
         """
         dominantEmotion = "unknown"
-        dominantScore = "0"
-        for x,y in self.emotions:
+        dominantScore = 0
+        for x,y in self.emotions.iteritems():
             if y >= dominantScore :
                 dominantEmotion = x
                 dominantScore = y
